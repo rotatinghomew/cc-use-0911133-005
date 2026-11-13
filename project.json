@@ -1,0 +1,8 @@
+{
+  "package": "registry_privacy_gateway",
+  "tests": "tests/privacy_batches",
+  "entrypoint": "registry_privacy_gateway.gateway.transfer",
+  "fixture_prefix": [],
+  "database_flag": "--db",
+  "analysis_fixture": "fixtures/merge_statistics.json"
+}

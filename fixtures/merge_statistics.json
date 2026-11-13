@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "analysis": {
+    "purpose": "capacity-analysis",
+    "observation_unit": "service-visit",
+    "weight_kind": "frequency",
+    "fields": [
+      "waiting",
+      "cost"
+    ],
+    "group_by": [
+      "group"
+    ],
+    "field_version": "units-v1",
+    "allowed_fields": [
+      "waiting",
+      "cost",
+      "group",
+      "weight"
+    ]
+  },
+  "sites": [
+    {
+      "site": "A",
+      "batch": "A-july",
+      "revision": 1,
+      "rows": [
+        {
+          "observation_id": "visit-0",
+          "partition": "shared",
+          "group": "south",
+          "purpose": "capacity-analysis",
+          "weight": 1,
+          "waiting": 1,
+          "cost": 12,
+          "private_note": "仅站内-0"
+        },
+        {
+          "observation_id": "visit-1",
+          "partition": "shared",
+          "group": "north",
+          "purpose": "capacity-analysis",
+          "weight": 2,
+          "waiting": 3,
+          "cost": 17,
+          "private_note": "仅站内-1"
+        },
+        {
+          "observation_id": "visit-2",
+          "partition": "shared",
+          "group": "south",
+          "purpose": "capacity-analysis",
+          "weight": 3,
+          "waiting": 5,
+          "cost": null,
+          "private_note": "仅站内-2"
+        },
+        {
+          "observation_id": "visit-3",
+          "partition": "shared",
+          "group": "north",
+          "purpose": "capacity-analysis",
+          "weight": 1,
+          "waiting": null,
+          "cost": 27,
+          "private_note": "仅站内-3"
+        },
+        {
+          "observation_id": "visit-4",
+          "partition": "A-only",
+          "group": "south",
+          "purpose": "capacity-analysis",
+          "weight": 2,
+          "waiting": 9,
+          "cost": 32,
+          "private_note": "仅站内-4"
+        },
+        {
+          "observation_id": "visit-5",
+          "partition": "A-only",
+          "group": "north",
+          "purpose": "capacity-analysis",
+          "weight": 3,
+          "waiting": 11,
+          "cost": 37,
+          "private_note": "仅站内-5"
+        },
+        {
+          "observation_id": "visit-6",
+          "partition": "A-only",
+          "group": "south",
+          "purpose": "capacity-analysis",
+          "weight": 1,
+          "waiting": 13,
+          "cost": 42,
+          "private_note": "仅站内-6"
+        },
+        {
+          "observation_id": "visit-7",
+          "partition": "A-only",
+          "group": "north",
+          "purpose": "capacity-analysis",
+          "weight": 2,
+          "waiting": 15,
+          "cost": 47,
+          "private_note": "仅站内-7"
+        },
+        {
+          "observation_id": "visit-8",
+          "partition": "A-only",
+          "group": "south",
+          "purpose": "capacity-analysis",
+          "weight": 3,
+          "waiting": 17,
+          "cost": 52,
+          "private_note": "仅站内-8"
+        },
+        {
+          "observation_id": "visit-9",
+          "partition": "A-only",
+          "group": "north",
+          "purpose": "capacity-analysis",
+          "weight": 1,
+          "waiting": 19,
+          "cost": 57,
+          "private_note": "仅站内-9"
+        }
+      ]
+    },
+    {
+      "site": "B",
+      "batch": "B-july",
+      "revision": 1,
+      "rows": [
+        {
+          "observation_id": "visit-0",
+          "partition": "shared",
+          "group": "south",
+          "purpose": "capacity-analysis",
+          "weight": 1,
+          "waiting": 1,
+          "cost": 12,
+          "private_note": "仅站内-0"
+        },
+        {
+          "observation_id": "visit-1",
+          "partition": "shared",
+          "group": "north",
+          "purpose": "capacity-analysis",
+          "weight": 2,
+          "waiting": 3,
+          "cost": 17,
+          "private_note": "仅站内-1"
+        },
+        {
+          "observation_id": "visit-2",
+          "partition": "shared",
+          "group": "south",
+          "purpose": "capacity-analysis",
+          "weight": 3,
+          "waiting": 5,
+          "cost": null,
+          "private_note": "仅站内-2"
+        },
+        {
+          "observation_id": "visit-3",
+          "partition": "shared",
+          "group": "north",
+          "purpose": "capacity-analysis",
+          "weight": 1,
+          "waiting": null,
+          "cost": 27,
+          "private_note": "仅站内-3"
+        },
+        {
+          "observation_id": "visit-B",
+          "partition": "B-only",
+          "group": "north",
+          "purpose": "capacity-analysis",
+          "weight": 2,
+          "waiting": 8,
+          "cost": 44
+        }
+      ]
+    },
+    {
+      "site": "C",
+      "batch": "C-july",
+      "revision": 1,
+      "rows": [
+        {
+          "observation_id": "visit-C",
+          "partition": "C-only",
+          "group": "south",
+          "purpose": "other-purpose",
+          "weight": 1,
+          "waiting": 2,
+          "cost": 25
+        }
+      ]
+    }
+  ],
+  "partition_contract": {
+    "version": "partition-v1",
+    "disjoint_keys": [
+      "shared",
+      "A-only",
+      "B-only",
+      "C-only"
+    ],
+    "authoritative_site": {
+      "shared": "A",
+      "A-only": "A",
+      "B-only": "B",
+      "C-only": "C"
+    }
+  },
+  "transmissions": [
+    {
+      "site": "A",
+      "revision": 1
+    },
+    {
+      "site": "B",
+      "revision": 1
+    },
+    {
+      "site": "A",
+      "revision": 1
+    },
+    {
+      "site": "A",
+      "revision": 2,
+      "replace_values": [
+        {
+          "observation_id": "visit-5",
+          "waiting": 14
+        }
+      ]
+    },
+    {
+      "site": "B",
+      "revision": 2,
+      "withdraw": true
+    }
+  ],
+  "incompatible_examples": [
+    {
+      "batch": "unknown-overlap",
+      "partition_contract": null,
+      "overlaps_with": [
+        "A-july"
+      ]
+    },
+    {
+      "batch": "wrong-units",
+      "field_version": "minutes-v2"
+    }
+  ]
+}
